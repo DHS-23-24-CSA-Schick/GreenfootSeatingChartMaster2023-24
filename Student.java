@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+import java.util.*;
 /**
  * Write a description of class Student here.
  * 
@@ -69,5 +69,34 @@ public abstract class Student extends Actor
         mySeatX=getX();
         mySeatY=getY();
     }
- 
+    public void tableSeven(){
+        List<Student> s = ((Classroom) getWorld()).getAllStudents();
+        ArrayList<Student> tableSevenStudents = new ArrayList<Student>();
+        for (int i = 0; i < s.size(); i++){
+            Student student = s.get(i);
+            if ((student.mySeatX == 8 && student.mySeatY == 6) || (student.mySeatX == 9 && student.mySeatY == 6) || (student.mySeatX == 8 && student.getY() == 7) || (student.mySeatX == 9 && student.mySeatY == 7)){
+                tableSevenStudents.add(student);
+            }
+        }
+        
+        for (int i = 0; i < 4; i++){
+            for (Student studentSelect : tableSevenStudents){
+                if (studentSelect.getX() == 8 && studentSelect.getY() == 6){
+                    studentSelect.setLocation(9, 6);
+                } else if (studentSelect.getX() == 8 && studentSelect.getY() == 7) {
+                    studentSelect.setLocation(8, 6);
+                } else if (studentSelect.getX() == 9 && studentSelect.getY() == 6) {
+                    studentSelect.setLocation(9, 7);
+                } else if (studentSelect.getX() == 9 && studentSelect.getY() == 7) {
+                    studentSelect.setLocation(8, 7);
+                } 
+            }
+            Greenfoot.delay(50);
+        }
+        
+        for (Student studentFinish : tableSevenStudents){
+            studentFinish.sitDown();
+            studentFinish.getImage().scale(60,60);
+        }
+    }
 }
