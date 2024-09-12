@@ -25,7 +25,7 @@ public class Classroom extends World
      * Constructor for objects of class Classroom.
      * 
      */
-    public Classroom()
+    public Classroom()                                                        
     {    
         // Create a new world with 10x6 cells with a cell size of 130x130 pixels.
         super(14, 14, 60); 
@@ -81,6 +81,7 @@ public class Classroom extends World
         StudentDesk studentdesk21 = new StudentDesk();
         addObject(studentdesk21,8,6);
         StudentDesk studentdesk22 = new StudentDesk();
+        
         addObject(studentdesk22,9,6);
         StudentDesk studentdesk23 = new StudentDesk();
         addObject(studentdesk23,8,7);
@@ -103,7 +104,7 @@ public class Classroom extends World
         StudentDesk studentdesk32 = new StudentDesk();
         addObject(studentdesk32,6,10);
         TeacherDesk teacherdesk = new TeacherDesk();
-        addObject(teacherdesk,2,9);
+        addObject(teacherdesk,2,10);
         studentdesk31.setDeskGroup(1);
         studentdesk29.setDeskGroup(1);
         studentdesk30.setDeskGroup(1);
@@ -149,13 +150,76 @@ public class Classroom extends World
  // Each student needs to create their specific instance following the KilgoreTrout example.
  // Your current seatX and seatY can be found by right clicking on the corresponding seat in the Classrom.
  // and then clicking on the inspect text
+        KoushikAarnav aarnavkoushik = new KoushikAarnav();
+        addObject(aarnavkoushik,6,6);
         KilgoreTrout kilgoretrout = new KilgoreTrout();
+        AbhishekParanthanate abhishekparanthanate = new AbhishekParanthanate();
         addObject(kilgoretrout,3,4);
         kilgoretrout.assignSeat();
+        
+        //adding sanjitha
+        SanjithaSaravanan sanjithasaravanan = new SanjithaSaravanan();
+        addObject(sanjithasaravanan,8,7);
+        sanjithasaravanan.assignSeat();
+        RyanKim ryankim = new RyanKim();
+        addObject(ryankim,6,4);
+        ryankim.assignSeat();
+        addObject(abhishekparanthanate, 8, 10);
+        abhishekparanthanate.assignSeat();
+        CyrilJoby cyriljoby = new CyrilJoby();
+        addObject(cyriljoby,5,3);
+        cyriljoby.assignSeat();
+
+        JoshChoi joshchoi = new JoshChoi();
+        addObject(joshchoi,2,4);
+        joshchoi.assignSeat();
+        JasonZhou jasonzhou = new JasonZhou();
+        addObject(jasonzhou,9,10);
         EvanTseng evantseng = new EvanTseng();
         addObject(evantseng, 8,4);
         evantseng.assignSeat();
         
+        
+        IshaanGupta ishaangupta = new IshaanGupta();
+        addObject(ishaangupta,9,10);
+        ishaangupta.assignSeat();
+        
+        KaitoSuzuki kaitosuzuki = new KaitoSuzuki();
+        addObject(kaitosuzuki, 9, 6);
+        kaitosuzuki.assignSeat();
+        HariniMurugan harinimurugan = new HariniMurugan();
+        addObject(harinimurugan, 5, 10);
+        harinimurugan.assignSeat();
+        AkshatKhandelwal akshatkhandelwal = new AkshatKhandelwal();
+        addObject(akshatkhandelwal,6,3);
+        akshatkhandelwal.assignSeat();
+        PaigeNothelfer paigenothelfer = new PaigeNothelfer();
+        addObject(paigenothelfer,6,10);
+        paigenothelfer.assignSeat();
+        Team5 team5 = new Team5(); 
+        addObject(team5, 100, 100);
+        
+        SanatGupta sanatgupta = new SanatGupta();
+        addObject(sanatgupta, 5, 4);
+        sanatgupta.assignSeat();
+        NithilaSadheesh nithilasadheesh = new NithilaSadheesh();
+        addObject(nithilasadheesh, 8, 9);
+        KevinLi kevinli = new KevinLi();
+        addObject(kevinli, 5, 7);
+        kevinli.assignSeat();
+        
+        SudithThota suditht = new SudithThota();
+        addObject(suditht, 8, 6);
+        suditht.assignSeat();
+        StudentDeskGroup sdg = new StudentDeskGroup();
+        this.addObject(sdg, 100,100);
+        sdg.assignSeatsToDeskGroups();
+        List<StudentDesk> desks = this.getObjects(StudentDesk.class);
+        sdg.getStudents(2, desks);
+  
+DeekshaVaidyanathan deekshavaidyanathan = new DeekshaVaidyanathan();
+addObject(deekshavaidyanathan,9,4);
+deekshavaidyanathan.assignSeat();  
     }
     
     public List<Student> getAllStudents(){
@@ -199,32 +263,32 @@ public class Classroom extends World
     
     
    public  void appendFile(String fname, String s){
-   {    
+   {	
       try{
-         
+    	 
         //Specify the file name and path here
-        File file =new File(fname);
+    	File file =new File(fname);
 
-        /* This logic is to create the file if the
-         * file is not already present
-         */
-        if(!file.exists()){
-           file.createNewFile();
-        }
+    	/* This logic is to create the file if the
+    	 * file is not already present
+    	 */
+    	if(!file.exists()){
+    	   file.createNewFile();
+    	}
 
-        //Here true is to append the content to file
-        FileWriter fw = new FileWriter(file,true);
-        //BufferedWriter writer give better performance
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(s);
-        //Closing BufferedWriter Stream
-        bw.close();
+    	//Here true is to append the content to file
+    	FileWriter fw = new FileWriter(file,true);
+    	//BufferedWriter writer give better performance
+    	BufferedWriter bw = new BufferedWriter(fw);
+    	bw.write(s);
+    	//Closing BufferedWriter Stream
+    	bw.close();
 
-    System.out.println("Data successfully appended at the end of file");
+	System.out.println("Data successfully appended at the end of file");
 
       }catch(IOException ioe){
          System.out.println("Exception occurred:");
-         ioe.printStackTrace();
+    	 ioe.printStackTrace();
        }
    }
 }
