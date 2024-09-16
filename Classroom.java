@@ -8,10 +8,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-//import java.util.List;
-//import java.util.Arrays;
- // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
- 
+
 /**
  * Write a description of class Classroom here.
  * 
@@ -21,17 +18,18 @@ import java.io.FileNotFoundException;
 public class Classroom extends World
 {
     private ArrayList<Object> listo = new ArrayList<Object>();
+
     /**
      * Constructor for objects of class Classroom.
-     * 
      */
-    public Classroom()
+    public Classroom()                                                        
     {    
-        // Create a new world with 10x6 cells with a cell size of 130x130 pixels.
+        // Create a new world with 14x14 cells with a cell size of 60x60 pixels.
         super(14, 14, 60); 
 
         prepare();
     }
+
 
     /**
      * Prepare the classroom desk layout.  This method should not be chanaged!. Refactored from prepare method.
@@ -81,6 +79,7 @@ public class Classroom extends World
         StudentDesk studentdesk21 = new StudentDesk();
         addObject(studentdesk21,8,6);
         StudentDesk studentdesk22 = new StudentDesk();
+        
         addObject(studentdesk22,9,6);
         StudentDesk studentdesk23 = new StudentDesk();
         addObject(studentdesk23,8,7);
@@ -103,7 +102,7 @@ public class Classroom extends World
         StudentDesk studentdesk32 = new StudentDesk();
         addObject(studentdesk32,6,10);
         TeacherDesk teacherdesk = new TeacherDesk();
-        addObject(teacherdesk,2,9);
+        addObject(teacherdesk,2,10);
         studentdesk31.setDeskGroup(1);
         studentdesk29.setDeskGroup(1);
         studentdesk30.setDeskGroup(1);
@@ -146,18 +145,121 @@ public class Classroom extends World
     private void prepare()
     {
         createDeskLayout();
- // Each student needs to create their specific instance following the KilgoreTrout example.
+ // Each student needs to create their specific instance following the PeytonLeonard example.
  // Your current seatX and seatY can be found by right clicking on the corresponding seat in the Classrom.
  // and then clicking on the inspect text
+
+        Bardia bardia = new Bardia();
+        addObject(bardia, 2, 7);
+        bardia.assignSeat();
+
+        PeytonLeonard peytonLeonard = new PeytonLeonard();
+        addObject(peytonLeonard,5,6);
+        peytonLeonard.assignSeat();
+        ArivDesai arivdesai = new ArivDesai();
+        addObject(arivdesai,2,3);
+        arivdesai.assignSeat();
+        KoushikAarnav aarnavkoushik = new KoushikAarnav();
+        addObject(aarnavkoushik,6,6);
         KilgoreTrout kilgoretrout = new KilgoreTrout();
+        AbhishekParanthanate abhishekparanthanate = new AbhishekParanthanate();
         addObject(kilgoretrout,3,4);
         kilgoretrout.assignSeat();
-        EvanTseng evantseng = new EvanTseng();
-        addObject(evantseng, 8,4);
-        evantseng.assignSeat();
+          
+        MatthewLoo matthewloo = new MatthewLoo();
+        addObject(matthewloo,6,7);
+        matthewloo.assignSeat();
         
+        SaiMadapuri saimadapuri = new SaiMadapuri();
+        addObject(saimadapuri, 6,9);
+        saimadapuri.assignSeat();
+        ZuhairRassiwala zuhairrassiwala = new ZuhairRassiwala();
+        addObject(zuhairrassiwala,9,9);
+        zuhairrassiwala.assignSeat();
+        RaghavanSrinivas raghavansrinivas = new RaghavanSrinivas();
+        addObject(raghavansrinivas, 9, 7);
+        raghavansrinivas.assignSeat();
+    
+        
+        SakethBandi sakethbandi = new SakethBandi();
+        addObject(sakethbandi,2,6);
+        sakethbandi.assignSeat();
+   
+        
+        //adding sanjitha
+        SanjithaSaravanan sanjithasaravanan = new SanjithaSaravanan();
+        addObject(sanjithasaravanan,8,7);
+        sanjithasaravanan.assignSeat();
+        RyanKim ryankim = new RyanKim();
+        addObject(ryankim,6,4);
+        ryankim.assignSeat();
+        addObject(abhishekparanthanate, 8, 10);
+        abhishekparanthanate.assignSeat();
+        CyrilJoby cyriljoby = new CyrilJoby();
+        addObject(cyriljoby,5,3);
+        cyriljoby.assignSeat();
+
+        JoshChoi joshchoi = new JoshChoi();
+        addObject(joshchoi,2,4);
+        joshchoi.assignSeat();
+        JasonZhou jasonzhou = new JasonZhou();
+        addObject(jasonzhou,9,10);
+        // EvanTseng evantseng = new EvanTseng();
+        // addObject(evantseng, 8,4);
+        // evantseng.assignSeat();
+        
+        
+        IshaanGupta ishaangupta = new IshaanGupta();
+        addObject(ishaangupta,9,10);
+        ishaangupta.assignSeat();
+        
+        KaitoSuzuki kaitosuzuki = new KaitoSuzuki();
+        addObject(kaitosuzuki, 9, 6);
+        kaitosuzuki.assignSeat();
+        HariniMurugan harinimurugan = new HariniMurugan();
+        addObject(harinimurugan, 5, 10);
+        harinimurugan.assignSeat();
+        AkshatKhandelwal akshatkhandelwal = new AkshatKhandelwal();
+        addObject(akshatkhandelwal,6,3);
+        akshatkhandelwal.assignSeat();
+        PaigeNothelfer paigenothelfer = new PaigeNothelfer();
+        addObject(paigenothelfer,6,10);
+        paigenothelfer.assignSeat();
+        
+        // TODO - Debug StudentDeskGroup
+        //      - Bug: When added to the objects
+        //             StudentDeskGroup blocks all
+        //             other objects from receiving
+        //             mouse clicks.
+        // Team5 team5 = new Team5(); 
+        // addObject(team5, 100, 100);
+        
+        SanatGupta sanatgupta = new SanatGupta();
+        addObject(sanatgupta, 5, 4);
+        sanatgupta.assignSeat();
+        NithilaSadheesh nithilasadheesh = new NithilaSadheesh();
+        addObject(nithilasadheesh, 8, 9);
+        
+        KevinLi kevinli = new KevinLi();
+        addObject(kevinli, 5, 7);
+        kevinli.assignSeat();
+        
+        SudithThota suditht = new SudithThota();
+        addObject(suditht, 8, 6);
+        suditht.assignSeat();
+        
+        StudentDeskGroup sdg = new StudentDeskGroup();
+        this.addObject(sdg, 100,100);
+        sdg.assignSeatsToDeskGroups();
+        List<StudentDesk> desks = this.getObjects(StudentDesk.class);
+        sdg.getStudents(2, desks);
+  
+        DeekshaVaidyanathan deekshavaidyanathan = new DeekshaVaidyanathan();
+        addObject(deekshavaidyanathan,9,4);
+        deekshavaidyanathan.assignSeat();  
     }
     
+
     public List<Student> getAllStudents(){
        List<Student> s = getObjects(Student.class);  
        return s;
