@@ -25,7 +25,7 @@ public class Classroom extends World
      * Constructor for objects of class Classroom.
      * 
      */
-    public Classroom()
+    public Classroom()                                                        
     {    
         // Create a new world with 10x6 cells with a cell size of 130x130 pixels.
         super(14, 14, 60); 
@@ -81,6 +81,7 @@ public class Classroom extends World
         StudentDesk studentdesk21 = new StudentDesk();
         addObject(studentdesk21,8,6);
         StudentDesk studentdesk22 = new StudentDesk();
+        
         addObject(studentdesk22,9,6);
         StudentDesk studentdesk23 = new StudentDesk();
         addObject(studentdesk23,8,7);
@@ -103,7 +104,9 @@ public class Classroom extends World
         StudentDesk studentdesk32 = new StudentDesk();
         addObject(studentdesk32,6,10);
         TeacherDesk teacherdesk = new TeacherDesk();
+        addObject(teacherdesk,2,10);
         addObject(teacherdesk,2,9);
+        
         studentdesk31.setDeskGroup(1);
         studentdesk29.setDeskGroup(1);
         studentdesk30.setDeskGroup(1);
@@ -152,10 +155,53 @@ public class Classroom extends World
         KilgoreTrout kilgoretrout = new KilgoreTrout();
         addObject(kilgoretrout,3,4);
         kilgoretrout.assignSeat();
+        JasonZhou jasonzhou = new JasonZhou();
+        addObject(jasonzhou,9,10);
         EvanTseng evantseng = new EvanTseng();
         addObject(evantseng, 8,4);
         evantseng.assignSeat();
         
+        
+        IshaanGupta ishaangupta = new IshaanGupta();
+        addObject(ishaangupta,9,10);
+        ishaangupta.assignSeat();
+        
+        KaitoSuzuki kaitosuzuki = new KaitoSuzuki();
+        addObject(kaitosuzuki, 9, 6);
+        kaitosuzuki.assignSeat();
+        HariniMurugan harinimurugan = new HariniMurugan();
+        addObject(harinimurugan, 5, 10);
+        harinimurugan.assignSeat();
+        AkshatKhandelwal akshatkhandelwal = new AkshatKhandelwal();
+        addObject(akshatkhandelwal,6,3);
+        akshatkhandelwal.assignSeat();
+        PaigeNothelfer paigenothelfer = new PaigeNothelfer();
+        addObject(paigenothelfer,6,10);
+        paigenothelfer.assignSeat();
+        Team5 team5 = new Team5(); 
+        addObject(team5, 100, 100);
+        
+        SanatGupta sanatgupta = new SanatGupta();
+        addObject(sanatgupta, 5, 4);
+        sanatgupta.assignSeat();
+        NithilaSadheesh nithilasadheesh = new NithilaSadheesh();
+        addObject(nithilasadheesh, 8, 9);
+        KevinLi kevinli = new KevinLi();
+        addObject(kevinli, 5, 7);
+        kevinli.assignSeat();
+        
+        SudithThota suditht = new SudithThota();
+        addObject(suditht, 8, 6);
+        suditht.assignSeat();
+        StudentDeskGroup sdg = new StudentDeskGroup();
+        this.addObject(sdg, 100,100);
+        sdg.assignSeatsToDeskGroups();
+        List<StudentDesk> desks = this.getObjects(StudentDesk.class);
+        sdg.getStudents(2, desks);
+  
+DeekshaVaidyanathan deekshavaidyanathan = new DeekshaVaidyanathan();
+addObject(deekshavaidyanathan,9,4);
+deekshavaidyanathan.assignSeat();  
     }
     
     public List<Student> getAllStudents(){

@@ -1,17 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * The EvanTseng class can be used as a model for your own class that represents you and your seating location in AP CSA
- * 
- * @author Mr. Kaehms
- * @version 2.0 Aug 13, 2019
- * @version 3.0 July 21, 2020
- */
-public class EvanTseng extends Student implements SpecialInterestOrHobby
+
+public class DeekshaVaidyanathan extends Student implements SpecialInterestOrHobby
 {
 
     /**
-     * Constructor for the EvanTseng class.
+     * Constructor for the DeekshaVaidyanathan class.
      * Constructors are special methods with the same exact name as the class name.  
      * Constructors to not have return types.
      * Constructors can be overloaded. This means we can call a constructor with different sets of parameter
@@ -22,7 +16,7 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
      * @param int s (seat number within row seating arrangement)
      * 
      */
-    public EvanTseng(String f, String l, int r, int s) {
+    public DeekshaVaidyanathan(String f, String l, int r, int s) {
         firstName=f;
         lastName=l;
         mySeatX=r;
@@ -38,9 +32,9 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
      * Pay attention to how the row and seat variables set the location of the image.  1,1 is the first cell in the upper left
      * of the classroom.
      */
-    public EvanTseng() {
-        firstName="Evan";
-        lastName="Tseng";
+    public DeekshaVaidyanathan() {
+        firstName="Deeksha";
+        lastName="Vaidyanathan";
         mySeatX=1;
         mySeatY=1;
        // imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
@@ -52,7 +46,7 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
     }
     
      /**
-     * Act - do whatever the EvanTseng actor wants to do. This method is called whenever
+     * Act - do whatever the DeekshaVaidyanathan actor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */   
     public void act() 
@@ -66,14 +60,12 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
                 getName();
                 sayName(soundFile);
             
-                myHobby("I like to spend time with my friends");
-                numSiblings("I have 2 siblings. One younger brother and one younger sister");
+                myHobby("I play the electric guitar!");
             // Create a "special method for your class and put the call here.  You can twirl your image, resize it, move it around, change transparancy, or a 
             // combination of all of those types of actions, or more. Make sure to save the original image if you manipulate it, so that you can put it back.
             // Call the sitDown() method to move back  to your seat
             
-                writingInitial();  // Kilgore Trount's special method... Please write one of your own. You can use this, but please modify it and be creative.
-           
+                dLetterClass();  // writes the letter D
                 sitDown();
             }
         
@@ -94,47 +86,27 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
 
    
     /**
-     * This is a local method specific to the EvanTseng class used to animate the character once the image is clicked on.
+     * This is a local method specific to the DeekshaVaidyanathan class used to animate the character once the image is clicked on.
      * You should write your own methods to perform your own animation for your character/avatar.
      */
-    public void writingInitial(){
-        setLocation(2,1);
-        Greenfoot.delay(10);
-        
-        for (int j=1; j<=4; j++) {
-                    // move right
-            for (int i=1;i<=12;i++){
-                //int speed = 10;
-                setLocation(i,1);
-                Greenfoot.delay(1);
-                //speed-= 2;
-            }
-            setLocation(2,1);
-            // move down
-            for (int i=1;i<=15;i++){
-                //int speed = 10;
-                setLocation(2,i);
-                Greenfoot.delay(1);
-                //speed-=2;
-            }      
-         // move right again
-            for (int i=1;i<=12;i++){
-                //int speed = 10;
-                setLocation(i,6);
-                Greenfoot.delay(1);
-                //speed -= 2;
-            }      
-            setLocation(2,11);
-              // move right for the third time and finish the E
-            for (int i=1;i<=12;i++){
-                //int speed = 10;
-                setLocation(i,11);
-                Greenfoot.delay(1);
-                
-            }
+    public void dLetterClass(){
+        setLocation(1,1);
+         Greenfoot.delay(10);
+        // move down
+        for (int i=0;i<=9;i++){
+            setLocation(1,i);
+            Greenfoot.delay(10);
         }
-   
-           Greenfoot.delay(2);
+        // move right across every line quickly
+        for (int i=9;i>=0;i--){
+            for (int j=0; j<=9;j++){
+                setLocation(j,i);
+                Greenfoot.delay(2);
+            }
+            
+        }      
+    
+           Greenfoot.delay(20);
            returnToSeat();
     }
      /**
@@ -144,10 +116,6 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
      */
      public void myHobby(String s) {
          System.out.println(s);
-}
-
-    public void numSiblings(String a) {
-        System.out.println(a);
 }
 
 }
