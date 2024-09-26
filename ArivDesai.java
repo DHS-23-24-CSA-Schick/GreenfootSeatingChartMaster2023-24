@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 2.0 Aug 13, 2019
  * @version 3.0 July 21, 2020
  */
-public class KilgoreTrout extends Student implements SpecialInterestOrHobby
+public class ArivDesai extends Student implements SpecialInterestOrHobby
 {
 
     /**
@@ -22,7 +22,8 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
      * @param int s (seat number within row seating arrangement)
      * 
      */
-    public KilgoreTrout(String f, String l, int r, int s) {
+    public ArivDesai(String f, String l, int r, int s) {
+        setLocation(3, 4);
         firstName=f;
         lastName=l;
         mySeatX=r;
@@ -31,24 +32,31 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
         standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
         soundFile=f.toLowerCase()+l.toLowerCase()+".wav";  // Make sure to name your sound files firstlast.wav, all lowercase!!!
         setImage(portraitFile);
+        setLocation(3,4);
         sitting=true;
+        
     }
     /**
      * Default constructor, if you don't pass in a name and seating location
      * Pay attention to how the row and seat variables set the location of the image.  1,1 is the first cell in the upper left
      * of the classroom.
      */
-    public KilgoreTrout() {
-        firstName="Kilgore";
-        lastName="Trout";
-        mySeatX=2;
-        mySeatY=2;
-       // imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
+    public ArivDesai() {
+        setLocation(3, 4);
+        firstName="Ariv";
+        lastName="Desai";
+        mySeatX=3;
+        mySeatY=4;
+       //imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
        portraitFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
        standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
         soundFile=firstName.toLowerCase()+ lastName.toLowerCase()+".wav";
+        setLocation(3, 4);
         setImage(portraitFile);
         sitting=true;
+        getImage().scale(60,60);
+        
+    
     }
     
      /**
@@ -66,7 +74,7 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
                 getName();
                 sayName(soundFile);
             
-                myHobby("I like to time travel!");
+                myHobby("I like racing go-karts!");
             // Create a "special method for your class and put the call here.  You can twirl your image, resize it, move it around, change transparancy, or a 
             // combination of all of those types of actions, or more. Make sure to save the original image if you manipulate it, so that you can put it back.
             // Call the sitDown() method to move back  to your seat
@@ -74,6 +82,9 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
                 circleClass();  // Kilgore Trount's special method... Please write one of your own. You can use this, but please modify it and be creative.
            
                 sitDown();
+                GreenfootImage portrait = getImage();
+                portrait.scale(60, 60);
+                setImage(portrait);
             }
         
     } 
@@ -106,7 +117,7 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
         }
         // move back
         for (int i=1;i<=5;i++){
-            setLocation(9,i);
+            setLocation(7,i);
             Greenfoot.delay(10);
         }      
          // move left
@@ -116,11 +127,13 @@ public class KilgoreTrout extends Student implements SpecialInterestOrHobby
         }      
               // move Forward
         for (int i=5;i>=0;i--){
-            setLocation(0,i);
+            setLocation(2,i);
             Greenfoot.delay(10);
         }   
            Greenfoot.delay(20);
+           getImage().scale(60,60);
            returnToSeat();
+           getImage().scale(60,60);
     }
      /**
      * myHobby is one of the interfaces provided.  
