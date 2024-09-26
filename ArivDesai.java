@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The EvanTseng class can be used as a model for your own class that represents you and your seating location in AP CSA
+ * The KilgoreTrout class can be used as a model for your own class that represents you and your seating location in AP CSA
  * 
  * @author Mr. Kaehms
  * @version 2.0 Aug 13, 2019
  * @version 3.0 July 21, 2020
  */
-public class EvanTseng extends Student implements SpecialInterestOrHobby
+public class ArivDesai extends Student implements SpecialInterestOrHobby
 {
 
     /**
-     * Constructor for the EvanTseng class.
+     * Constructor for the KilgoreTrout class.
      * Constructors are special methods with the same exact name as the class name.  
      * Constructors to not have return types.
      * Constructors can be overloaded. This means we can call a constructor with different sets of parameter
@@ -22,7 +22,8 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
      * @param int s (seat number within row seating arrangement)
      * 
      */
-    public EvanTseng(String f, String l, int r, int s) {
+    public ArivDesai(String f, String l, int r, int s) {
+        setLocation(3, 4);
         firstName=f;
         lastName=l;
         mySeatX=r;
@@ -31,28 +32,35 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
         standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
         soundFile=f.toLowerCase()+l.toLowerCase()+".wav";  // Make sure to name your sound files firstlast.wav, all lowercase!!!
         setImage(portraitFile);
+        setLocation(3,4);
         sitting=true;
+        
     }
     /**
      * Default constructor, if you don't pass in a name and seating location
      * Pay attention to how the row and seat variables set the location of the image.  1,1 is the first cell in the upper left
      * of the classroom.
      */
-    public EvanTseng() {
-        firstName="Evan";
-        lastName="Tseng";
-        mySeatX=9;
-        mySeatY=3;
-        //imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
+    public ArivDesai() {
+        setLocation(3, 4);
+        firstName="Ariv";
+        lastName="Desai";
+        mySeatX=3;
+        mySeatY=4;
+       //imgFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
        portraitFile=firstName.toLowerCase()+ lastName.toLowerCase()+".jpg";
-       standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";    
+       standingFile=firstName.toLowerCase()+ lastName.toLowerCase()+"-standing.jpg";
         soundFile=firstName.toLowerCase()+ lastName.toLowerCase()+".wav";
+        setLocation(3, 4);
         setImage(portraitFile);
         sitting=true;
+        getImage().scale(60,60);
+        
+    
     }
     
      /**
-     * Act - do whatever the EvanTseng actor wants to do. This method is called whenever
+     * Act - do whatever the KilgoreTrout actor wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */   
     public void act() 
@@ -65,8 +73,8 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
                 System.out.println(""); // Print a blank line to create space between any student output.
                 getName();
                 sayName(soundFile);
-                myHobby("I like to spend time with my friends");
-                System.out.println("I am the oldest of three siblings and I have a sister and a brother");
+            
+                myHobby("I like racing go-karts!");
             // Create a "special method for your class and put the call here.  You can twirl your image, resize it, move it around, change transparancy, or a 
             // combination of all of those types of actions, or more. Make sure to save the original image if you manipulate it, so that you can put it back.
             // Call the sitDown() method to move back  to your seat
@@ -74,6 +82,9 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
                 circleClass();  // Kilgore Trount's special method... Please write one of your own. You can use this, but please modify it and be creative.
            
                 sitDown();
+                GreenfootImage portrait = getImage();
+                portrait.scale(60, 60);
+                setImage(portrait);
             }
         
     } 
@@ -93,34 +104,36 @@ public class EvanTseng extends Student implements SpecialInterestOrHobby
 
    
     /**
-     * This is a local method specific to the EvanTseng class used to animate the character once the image is clicked on.
+     * This is a local method specific to the KilgoreTrout class used to animate the character once the image is clicked on.
      * You should write your own methods to perform your own animation for your character/avatar.
      */
     public void circleClass(){
         setLocation(0,0);
          Greenfoot.delay(10);
         // move right
-        for (int i=1;i<=8;i++){
+        for (int i=1;i<=9;i++){
             setLocation(i,0);
             Greenfoot.delay(10);
         }
         // move back
-        for (int i=1;i<=8;i++){
-            setLocation(9,i);
+        for (int i=1;i<=5;i++){
+            setLocation(7,i);
             Greenfoot.delay(10);
         }      
          // move left
-        for (int i=15;i>=9;i--){
+        for (int i=9;i>=0;i--){
             setLocation(i,5);
             Greenfoot.delay(10);
         }      
               // move Forward
-        for (int i=17;i>=10;i--){
-            setLocation(0,i);
+        for (int i=5;i>=0;i--){
+            setLocation(2,i);
             Greenfoot.delay(10);
         }   
            Greenfoot.delay(20);
+           getImage().scale(60,60);
            returnToSeat();
+           getImage().scale(60,60);
     }
      /**
      * myHobby is one of the interfaces provided.  
